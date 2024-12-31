@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: linear-gradient(to bottom, #1c1c3c, #1a002a);
+            overflow-x: hidden;
+        }
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://i.pinimg.com/originals/18/0f/dd/180fddc7cc812ff7878eadd0294cc573.gif) center/cover no-repeat;
+            z-index: -1;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.5rem;
+        }
+        .explore-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: #fff;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .main-content {
+            text-align: center;
+            padding: 20px;
+        }
+        .message {
+            margin: 40px auto;
+            max-width: 600px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        .slideshow {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .slideshow img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        .countdown {
+            font-size: 1.8rem;
+            margin: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="fireworks"></div>
+    <header>
+        <h1>Happy New Year, Alangkrita!</h1>
+        <p>Here's to another amazing year, filled with love and happiness.</p>
+        <a href="#main" class="explore-button">Click to Explore</a>
+    </header>
+
+    <div id="main" class="main-content">
+        <div class="message">
+            <p>Miss Draupadi,</p>
+            <p>This year with you has been the most magical time of my life. Thank you for everything.</p>
+        </div>
+        
+        <div class="slideshow">
+            <img src="https://i.postimg.cc/15wBQ01T/11.jpg" alt="Memory 1">
+            <img src="https://i.postimg.cc/wM6w477M/11-1.jpg" alt="Memory 2">
+        
+        </div>
+
+        <div class="countdown" id="countdown">
+            Counting down to New Year: <span id="timer">00:00:00</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>Happy New Year once again! With love Kabish<3.</p>
+    </footer>
+
+    <audio id="bg-music" src="https://youtu.be/fbNe0UpA5dQ?si=s5TwAaJQOL9tyWcP" autoplay loop></audio>
+
+    <script>
+        const countdown = document.getElementById('timer');
+        function updateCountdown() {
+            const now = new Date();
+            const newYear = new Date(now.getFullYear() + 1, 0, 1);
+            const diff = newYear - now;
+            const hours = String(Math.floor(diff / 1000 / 60 / 60) % 24).padStart(2, '0');
+            const minutes = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, '0');
+            const seconds = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
+            countdown.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
